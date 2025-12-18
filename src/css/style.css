@@ -1,0 +1,33 @@
+.mi-clase {
+    background-color: #c9e9e6;
+    text-align: center;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #333333;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666666;
+}
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.caja-info {
+    background-color: #6fa2ef9d;
+    border: 2px solid #bf82c6;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+}
+
