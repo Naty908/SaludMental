@@ -6,18 +6,41 @@
 
 body {
     font-family: Arial, sans-serif;
+
 }
 h1 {
-    color: #333333;
+    font-family: "Coiny", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    color: #393939;
+}
+h2 {
+    font-family: "Chicle", system-ui;
+    line-height: 1;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: #35728a;
 }
 p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666666;
+    font-family: Truculenta, system-ui;
+    font-size: 22px;
+    line-height: 1;
+    color: #2f2f2f;
 }
 a {
-    color: #1a73e8;
+    font-family: Truculenta, system-ui;
+    font-size: 22px;
+    line-height: 1;
+    color: #b271dd;
     text-decoration: none;
+}
+li {
+    font-family: Truculenta, system-ui;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #2f2f2f;
 }
 a:hover {
     text-decoration: underline;
