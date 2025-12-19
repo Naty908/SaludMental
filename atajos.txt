@@ -1,0 +1,12 @@
+git pull
+# trabajas en tu código
+git add .
+git commit -m "Descripción clara del cambio"
+git push
+
+git commit -m "Agrego layout con Flexbox en sección principal"
+
+
+Si vienes de otra compu:
+git checkout Naty
+git pull
