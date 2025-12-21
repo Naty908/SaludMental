@@ -188,3 +188,29 @@ h4 {
   width: 260px;
   text-align: center;
 }
+/* Ultimas modificacionmes, las tarjetas son de color rosita, cambia las otras a este color */
+.contenedor-flex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.tarjeta {
+  background-color: #f9f4f7;
+  padding: 20px;
+  border-radius: 10px;
+  width: 240px;
+  text-align: center;
+}
+/* Alinear el contenido dentro de las tarjetas y subtemas */
+/* Ultimas modificaciones, no se muy bien que hacen */
+.subtema {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
