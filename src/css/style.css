@@ -5,6 +5,8 @@
     background-color: #c9e9e6;
     text-align: center;
     padding: 20px;
+    z-index: 500;
+
 }
 
 body {
@@ -146,6 +148,7 @@ nav ul {
     display: flex;
     justify-content: center; /* centra el icono horizontalmente */
     align-items: center;    /* centra el icono verticalmente */
+    z-index: 1000; /* siempre encima */
 }
 
 .boton-flotante:hover {
@@ -187,6 +190,9 @@ h4 {
   border-radius: 10px;
   width: 260px;
   text-align: center;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /* Ultimas modificacionmes, las tarjetas son de color rosita, cambia las otras a este color */
 .contenedor-flex {
@@ -201,16 +207,14 @@ h4 {
   border-radius: 10px;
   width: 240px;
   text-align: center;
-}
-/* Alinear el contenido dentro de las tarjetas y subtemas */
-/* Ultimas modificaciones, no se muy bien que hacen */
-.subtema {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.tarjeta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.tarjeta h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.tarjeta p {
+    flex-grow: 1;       /* para que el párrafo ocupe el espacio disponible */
 }
