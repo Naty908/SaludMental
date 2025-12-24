@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="./src/css/style.css" />
+
+  <script src="./src/js/asistente.js" defer></script>
 </head>
 
 <body>
@@ -173,10 +175,28 @@
 
   <footer>
     <p>Hecho con <i class="fa-solid fa-heart" style="color: #e25555;"></i> para Mente en Voz Alta</p>
-    <!-- <p>Este sitio utiliza cookies para mejorar la experiencia. <a href="#cookies-policy">Más información</a>.</p> -->
+    <!-- <p> Este sitio utiliza cookies para mejorar la experiencia. <a href="#cookies-policy">Más información</a>.</p> -->
     <a href="#inicio">Volver arriba</a>
   </footer>
 
 </body>
+
+<!-- asistente emocional tipo bot -->
+<div id="asistente" class="asistente oculto">
+  <div class="chat">
+    <div class="mensaje bot">
+      Hola 💗 ¿Cómo te sientes hoy?
+    </div>
+  </div>
+
+  <div class="opciones">
+    <button data-respuesta="ansiedad">😰 Ansiedad</button>
+    <button data-respuesta="tristeza">😔 Tristeza</button>
+    <button data-respuesta="estres">😣 Estrés</button>
+    <button data-respuesta="bien">😊 Me siento bien</button>
+  </div>
+</div>
+
+
 
 </html>

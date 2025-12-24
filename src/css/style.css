@@ -5,6 +5,7 @@
     background-color: #c9e9e6;
     text-align: center;
     padding: 20px;
+    top: 0;
     z-index: 500;
 
 }
@@ -72,11 +73,7 @@ nav a {
 nav a:hover {
     color: #1d5669; /* color al pasar el cursor */
 }
-button {
-    position: fixed;
-    bottom: 80px;
-    right: 80px;
-}
+
 button img {
     width: 80px;
     height: 80px;
@@ -107,13 +104,13 @@ footer a:hover {
 
 /* menú de Navegación */
 nav ul {
-    list-style: none; /* Quita los puntos */
+    list-style: none; /* quita los puntos */
     padding: 0;
     margin: 0;
-    display: flex; /* Pone los elementos en fila */
+    display: flex; /* pone los elementos en fila */
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Si es pantalla pequeña, bajan de línea */
+    flex-wrap: wrap; /* si es pantalla pequeña, bajan de línea */
 }
 
 /* botón Flotante (ícono) */
@@ -159,7 +156,7 @@ h4 {
     color: #65c5e882;
     font-size: 20px;
     line-height: 1;
-    color: #e38277c5;
+    color: #ab5d92c5;
 }
 .subtemas-flex {
   display: flex;
@@ -180,15 +177,191 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
 }
-/* Ultimas modificacionmes, las tarjetas son de color rosita, cambia las otras a este color */
-.contenedor-flex {
+/* Usamos este estilo para el contenedor de cualquier sección de tarjetas */
+.contenedor-flex, .subtemas-flex, .recursos-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no caben */
+    justify-content: center; /* Las centra horizontalmente */
+    gap: 25px; /* Espacio entre tarjetas */
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Aplicamos el mismo estilo a tarjeta, subtema y recurso */
+.tarjeta, .subtema, .recurso {
+    background-color: #fff0f5; /* Fondo rosita pálido */
+    border: 2px solid #ffb6c9; /* Borde suave */
+    border-radius: 20px;
+    padding: 25px 20px;
+    
+    /* responsabilidad en tarjetas */
+    flex: 1 1 280px; /* Crecen para llenar espacio, pero base de 280px */
+    max-width: 320px; /* No se hacen gigantes en pantallas grandes */
+    width: 100%;      /* Para asegurar que llenen en móvil */
+    
+    /* Alineación interna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    
+    /* Efectos visuales */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse (Hover) para todas las tarjetas */
+.tarjeta:hover, .subtema:hover, .recurso:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(178, 113, 221, 0.25);
+    background-color: #ffffff;
+    border-color: #b271dd; /* Borde lila al pasar el mouse */
+}
+
+/* Títulos de las tarjetas */
+.tarjeta h3, .subtema h4, .recurso h4 {
+    font-family: "Chicle", system-ui;
+    font-size: 26px;
+    color: #7f4ea0; /* morado */
+    margin-bottom: 10px;
+}
+
+/* Textos de las tarjetas */
+.tarjeta p, .subtema p, .recurso p {
+    font-family: "Truculenta", system-ui;
+    font-size: 19px;
+    color: #4a4a4a;
+    line-height: 1.4;
+    margin-bottom: 15px; /* Espacio antes del botón o enlace */
+}
+
+/* Enlaces/Botones dentro de Recursos (para que se vean lindos) */
+.recurso a {
+    display: inline-block;
+    background-color: #c9e9e6;
+    color: #3387a9ef;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: auto; /* Empuja el botón al final de la tarjeta */
+    transition: background-color 0.2s;
+}
+
+.recurso a:hover {
+    background-color: #4795b4;
+    color: white;
+    text-decoration: none;
+}
+
+/* Iconos dentro de las tarjetas */
+.recurso i, .icono-tarjeta i {
+    font-size: 40px;
+    color: #35728a;
+    margin-bottom: 15px;
+    background-color: #e0f7fa; /* Círculo de fondo */
+    width: 70px;
+    height: 70px;
+    line-height: 70px; /* Centra verticalmente */
+    border-radius: 50%;
+}
+
+/*  media queries (Ajustes para Celular) */
+@media (max-width: 768px) {
+    /* Ajuste de textos generales */
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    
+    /* Las tarjetas ocuparán casi todo el ancho en celular */
+    .contenedor-flex, .subtemas-flex, .recursos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tarjeta, .subtema, .recurso {
+        max-width: 90%; /* Dejan un margen a los lados */
+        width: 90%;
+    }
+
+    /* Menú de navegación en columna */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Ajuste del padding general */
+    .seccion-padding {
+        padding: 15px;
+    }
+}
+/* contenedor flexible para centrar las tarjetas */
+.contenedor-flex, .subtemas-flex {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px; /* espacio */
   flex-wrap: wrap;
+  padding: 10px; /* espacio para que no se corten las sombras */
+}
+
+/* Estilo para tarjetas y subtemas */
+.tarjeta, .subtema {
+  background-color: #fff0f5; /* Fondo rosita suave */
+  border: 2px solid #ffb6c9; /* Borde rosita definido */
+  padding: 25px 20px;
+  border-radius: 20px; /* Bordes redondos */
+  width: 260px;
+  text-align: center;
+  
+  /* Flexbox para que el contenido se distribuya bien verticalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontalmente */
+  justify-content: flex-start;
+  
+  /* Sombra y transición */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  cursor: default;
+}
+
+/* Títulos dentro de las tarjetas */
+.tarjeta h3, .subtema h4 {
+    font-family: "Chicle", system-ui; 
+    font-size: 25px;
+    color: #6d4b84; /* color morado */
+    margin: 10px 0;
+}
+
+/* Texto dentro de las tarjetas */
+.tarjeta p, .subtema p {
+    font-family: "Truculenta", system-ui;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Efecto hover */
+.tarjeta:hover, .subtema:hover {
+    transform: translateY(-8px); /* La tarjeta sube */
+    box-shadow: 0 12px 20px rgba(178, 113, 221, 0.2); /* Sombra lila suave */
+    border-color: #b271dd; /* El borde cambia a lila */
+    background-color: #ead1f1; /* Fondo lila suave */
+}
+
+.icono-tarjeta {
+    font-size: 40px;
+    color: #06a6e5; /* Azul turquesa de tu paleta */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;     /* Para centrar el icono en el círculo */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 .tarjeta {
-  background-color: #f9f4f7;
+  background-color: #fff0f5;
   padding: 20px;
   border-radius: 10px;
   width: 240px;
@@ -196,6 +369,15 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color:#6d4b84;
+}
+
+.tarjeta h3, .subtema h4 {
+    font-family: "Chicle", system-ui; 
+    font-size: 25px;
+    color: #6d4b84; /* color morado */
+    margin: 10px 0;
+ 
 }
 
 .tarjeta h3 {
@@ -203,7 +385,7 @@ h4 {
     margin-bottom: 10px;
 }
 .tarjeta p {
-    flex-grow: 1;       /* para que el párrafo ocupe el espacio disponible */
+    flex-grow: 1; /* para que el párrafo ocupe el espacio disponible */
 }
 
 @media (max-width: 600px) {
@@ -221,9 +403,6 @@ h4 {
     flex-direction: column;
     gap: 10px;
   }
-}
-.caja-info:hover {
-    background-color: #d4eeed;
 }
 
 @media (max-width: 600px) {
@@ -254,11 +433,24 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #fff0f5; /* Fondo rosita suave */
+  border: 2px solid #ffb6c9; /* Borde rosita definido */
+  padding: 25px 20px;
+  border-radius: 20px; /* Bordes redondos */
+  text-align: center;
+
+}
+
+.recurso:hover, .subtema:hover {
+    transform: translateY(-8px); /* La tarjeta sube */
+    box-shadow: 0 12px 20px rgba(178, 113, 221, 0.2); /* Sombra lila suave */
+    border-color: #b271dd; /* El borde cambia a lila */
+    background-color: #ead1f1; /* Fondo lila suave */
 }
 
 .recurso i {
   font-size: 32px;
-  color: #b271dd;
+  color:#6d4b84;
 }
 .recurso h3 {
   font-size: 22px;
@@ -268,3 +460,87 @@ h4 {
   font-size: 18px;
   color: #4a4a4a;
 }
+
+/* asistente emocional */
+.asistente {
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  background-color: #f9f4f7;
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  font-family: Truculenta, system-ui;
+  z-index: 999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.asistente-titulo {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #6d4b84;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opciones button {
+  position: static;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: #ffdee7;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.opciones button:hover {
+  background-color: #ffb6c9;
+}
+
+.respuesta {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #35728a;
+  text-align: center;
+}
+
+.oculto {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+.chat {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mensaje {
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+  font-size: 16px;
+}
+
+.mensaje.bot {
+  background-color: #e7d9f5;
+  align-self: flex-start;
+}
+
+.mensaje.user {
+  background-color: #c9e9e6;
+  align-self: flex-end;
+}
+
